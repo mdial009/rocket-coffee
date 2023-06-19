@@ -10,21 +10,16 @@ export default function ProductListItem({
   isOnSale,
 }) {
   return (
-    
-    <div className={isOnSale ? "on-sale" : "card"}>
-      <h2>
-        {name}
-        {isOnSale ? " (On Sale)" : ""}
-      </h2>
-
-      <img src={imageUrl} alt="" />
-
-      <small>{price}</small>
-
-      <button onClick={onAddToCart} disabled={isSoldOut}>
-        {isSoldOut ? "Sold out" : "Add to Cart"}
-      </button>
-    </div>
+    <Card highlight={isOnSale}>
+      <Heading>
+        {name} {isOnSale && "(On Sale)"}
+      </Heading>
+      <img src={imageUrl} alt=""></img>
+      <Text>{price}</Text>
+      <Button onClick={onAddToCart} disabled={isOnSale}>
+        {isSoldOut ? "Sold Out" : "Add To Cart"}
+      </Button>
+    </Card>
   );
 }
 
@@ -33,7 +28,7 @@ function Heading({ children }) {
 }
 
 function Card({ children, highlight }) {
-  const cardClassName = highlight ? "card sale" : "card";
+  const cardClassName = highlight ? "card_sale" : "card";
   return <div className={cardClassName}>{children}</div>;
 }
 

@@ -16,7 +16,7 @@ export default function ProductListItem({
       </Heading>
       <img src={imageUrl} alt=""></img>
       <Text>{price}</Text>
-      <Button onClick={onAddToCart} disabled={isOnSale}>
+      <Button onClick={onAddToCart} disabled={isSoldOut}>
         {isSoldOut ? "Sold Out" : "Add To Cart"}
       </Button>
     </Card>
@@ -37,5 +37,10 @@ function Text({ children }) {
 }
 
 function Button({ onClick, children }) {
-  return <button onClick={onClick}>{children}</button>;
+  const cardClassName = "button-56 ";
+  return (
+    <button className={cardClassName} onClick={onClick}>
+      {children}
+    </button>
+  );
 }

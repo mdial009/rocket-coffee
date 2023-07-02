@@ -1,7 +1,6 @@
 .card {
     display: flex;
     flex-direction: column;
-
     border: 1px solid #EDEDED;
     padding: 8px;
     max-width: 240px;
@@ -27,3 +26,4 @@
     max-width: 240px;
     background-color: #E8F6FF;
 }
+
